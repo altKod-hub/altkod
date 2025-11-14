@@ -25,7 +25,7 @@ Projekt Vode:
 
 ---
 
-## 🎯 Cilj projekta
+## 🎯 Cilj Projekta
 
 Na altkod.com želimo pružiti jednostavna, razumljiva i praktična objašnjenja tema kao što su:
 
