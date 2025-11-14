@@ -1,7 +1,7 @@
 # ⚡ altKod.com  
-**Učimo SEO, automatizaciju i moderne web tehnologije – jasno, praktično i bez kompliciranja.**
+**Učimo Marketing, SEO, automatizaciju i moderne web tehnologije – jasno, praktično i bez kompliciranja.**
 
-Altkod.com je edukativna platforma posvećena svima koji žele poboljšati svoje digitalne vještine – od SEO-a, n8n automatizacije i web developmenta, do produktivnosti i modernih workflowa.
+altKod je edukativna platforma posvećena svima koji žele poboljšati svoje digitalne vještine – od SEO-a, n8n automatizacije i web developmenta, do produktivnosti i modernih workflowa.
 
 Projekt Vode:
 
