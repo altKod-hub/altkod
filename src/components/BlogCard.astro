@@ -1,0 +1,16 @@
+---
+// Components
+import { Image } from 'astro:assets';
+// Image Props
+const { src = "https://images.pexels.com/photos/4870911/pexels-photo-4870911.jpeg", alt = "Alt Opis", width = "1200", height = "800", loading = "eager" } = Astro.props;
+// Card Body Props
+const { title = "Lorem ipsum dolor sit amet consectetur adipisicing elit.", excerpt = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus temporibus repudiandae debitis aliquam impedit placeat fugiat?", href = "/", label="Pročitaj"} = Astro.props;
+---
+<article class="bg-zinc-900 rounded-lg overflow-hidden">
+    <Image src={src} alt={alt} width={width} height={height} loading={loading} />
+    <div class="flex flex-col gap-fluid-sm p-fluid-sm">
+        <h3 class="font-extrabold text-fluid-base">{title}</h3>
+        <p>{excerpt}</p>
+        <a href={href}>{label}</a>
+    </div>
+</article>
