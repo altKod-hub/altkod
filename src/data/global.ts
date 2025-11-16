@@ -8,7 +8,8 @@ export const siteData = {
     copyright: `altKod - ${currentYear} | Sva Prava Pridržana`,
     ver: "0.0.1",
     url: "https://altkod.com",
-    cmsURL: "https://altkod.apollo.filipsteficar.com"
+    cmsURL: "https://altkod.apollo.filipsteficar.com",
+    graphQL: "https://altkod.apollo.filipsteficar.com/graphql"
 }
 // Define the MenuItem Interface
 interface MenuItem {

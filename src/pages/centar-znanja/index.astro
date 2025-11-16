@@ -1,0 +1,59 @@
+---
+// Data
+import { siteData } from '@/data/global';
+// Components
+import BlogCard from '@/components/BlogCard.astro';
+import Layout from '@/layouts/Layout.astro';
+// Types
+import type { Post } from '@/types/Post';
+// GraphQL Query
+const QueryPosts = `
+    query {
+        posts(sort: ["-date_created"]) {
+            title
+            slug
+            date_created
+            page_description
+            cover {
+                id
+            }
+            author {
+                name
+            }
+        }
+    }
+`;
+
+const CMS_URL = siteData.graphQL;
+
+const response = await fetch(CMS_URL, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ query: QueryPosts })
+});
+
+const json = await response.json();
+const posts = json.data.posts as Post[];
+---
+<Layout>
+    <section class="mx-auto mt-fluid-sm px-fluid-sm container">
+        <div class="bg-neutral-100 dark:bg-neutral-900 p-fluid-sm rounded-lg">
+            <h1 class="font-extrabold text-fluid-xl"><span class="text-fuchsia-500">_</span>Centar Znanja</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, provident ipsa animi ab, alias architecto, itaque veniam et nobis cupiditate quam tempora quia impedit!</p>
+        </div>
+    </section>
+	<section class="gap-fluid-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto mt-fluid-sm px-fluid-sm container">
+        {posts.map((post, index) => (
+            <BlogCard
+            src={`${siteData.cmsURL}/assets/${post.cover.id}?width=1200&quality=80`}
+            title={post.title}
+            href={post.slug}
+            author={post.author.name}
+            date={new Date(post.date_created).toLocaleDateString('en-GB')}
+            loading={index < 9 ? "eager" : "lazy"}
+            />
+        ))}
+    </section>
+</Layout>

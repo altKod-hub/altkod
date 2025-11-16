@@ -3,11 +3,11 @@ import { siteData, mainMenu } from "@/data/global";
 ---
 <header class="bg-neutral-100 dark:bg-neutral-900">
     <nav class="flex flex-row flex-wrap justify-between items-center mx-auto p-fluid-sm container">
-        <a href="/" class="font-heading font-extrabold transition-colors duration-500 ease-in-out">_{siteData.name}</a>
+        <a href="/" class="font-heading font-extrabold transition-colors duration-500 ease-in-out"><span class="text-fuchsia-500">_</span>{siteData.name}</a>
         <ul class="flex flex-row flex-wrap gap-fluid-sm">
             {mainMenu?.map((item) => (
                 <li>
-                    <a href={item.href || "/"}>_{item.label || "Unknown"}</a>
+                    <a href={item.href || "/"}><span class="text-fuchsia-500">_</span>{item.label || "Unknown"}</a>
                 </li>
             ))}
         </ul>

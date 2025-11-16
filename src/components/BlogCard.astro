@@ -4,13 +4,16 @@ import { Image } from 'astro:assets';
 // Image Props
 const { src = "https://images.pexels.com/photos/4870911/pexels-photo-4870911.jpeg", alt = "Alt Opis", width = "1200", height = "800", loading = "eager" } = Astro.props;
 // Card Body Props
-const { title = "Lorem ipsum dolor sit amet consectetur adipisicing elit.", excerpt = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus temporibus repudiandae debitis aliquam impedit placeat fugiat?", href = "/", label="Pročitaj"} = Astro.props;
+const { title = "Lorem ipsum dolor sit amet consectetur adipisicing elit.", href = "/", label="Pročitaj", author = "Nepoznati Autor", date = "01/01/1999"} = Astro.props;
 ---
-<article class="bg-zinc-900 rounded-lg overflow-hidden">
-    <Image src={src} alt={alt} width={width} height={height} loading={loading} />
+<article class="bg-neutral-100 dark:bg-neutral-900 rounded-lg overflow-hidden">
+    <Image src={src} alt={alt} width={width} height={height} loading={loading} class="object-cover aspect-video" />
     <div class="flex flex-col gap-fluid-sm p-fluid-sm">
         <h3 class="font-extrabold text-fluid-base">{title}</h3>
-        <p>{excerpt}</p>
-        <a href={href}>{label}</a>
+        <a href={href} class="hidden self-start bg-neutral-200 dark:bg-neutral-800 px-fluid-sm py-fluid-2xs border-2 border-neutral-300 hover:border-neutral-400 dark:border-neutral-700 dark:hover:border-neutral-600 rounded-lg transition-all hover:-translate-y-fluid-2xs duration-500 ease-in-out">{label}</a>
+        <div class="flex flex-row justify-between">
+            <p>{author}</p>
+            <p>{date}</p>
+        </div>
     </div>
 </article>
